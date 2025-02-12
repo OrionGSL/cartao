@@ -5,12 +5,13 @@ body {
     background-color: #f4f4f4;
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 100vh; /* 100% da altura da tela */
+    align-items: flex-start; /* Garantir que o conteúdo comece do topo */
     flex-direction: column;
+    height: 100%; /* Ajuste para permitir o comportamento desejado */
+    overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
-.footer-image {
+footer-image {
     display: block;
     margin: 20px auto;
     width: 200px;
@@ -43,8 +44,8 @@ body {
     padding-left: 40px;
     padding-right: 40px;
     box-sizing: border-box;
-    margin-top: 30px;  /* Aumentando a margem superior */
-    margin-bottom: 30px; /* Aumentando a margem inferior */
+    margin-top: 30px;  /* Ajuste para margem superior */
+    margin-bottom: 30px; /* Ajuste para margem inferior */
 }
 
 .titulo {
