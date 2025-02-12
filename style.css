@@ -3,6 +3,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4; /* Cor de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* A altura da tela */
+    flex-direction: column; /* Garante que o conteúdo se alinhe verticalmente */
 }
 
 /* Estilo para a imagem dentro do formulário */
@@ -40,10 +45,6 @@ body {
     padding-bottom: 10px; /* Reduzido ainda mais */
     padding-left: 40px; /* Mantido */
     padding-right: 40px; /* Mantido */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     box-sizing: border-box;
 }
 
