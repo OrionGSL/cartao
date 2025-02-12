@@ -46,6 +46,8 @@ body {
     padding-left: 40px; /* Mantido */
     padding-right: 40px; /* Mantido */
     box-sizing: border-box;
+    margin-top: 30px; /* Espaço no topo */
+    margin-bottom: 30px; /* Espaço na parte inferior */
 }
 
 /* Títulos */
