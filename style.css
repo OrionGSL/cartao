@@ -89,6 +89,8 @@ body {
         width: 90%;
         padding-left: 20px;
         padding-right: 20px;
+        margin-top: 50px;  /* Aumentando a margem superior */
+        margin-bottom: 50px; /* Aumentando a margem inferior */
     }
 
     .titulo {
@@ -104,6 +106,6 @@ body {
     }
 
     .timer {
-        font-size: 15px;
+        font-size: 18px;
     }
 }
