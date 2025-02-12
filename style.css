@@ -5,9 +5,10 @@ body {
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Ajuste para garantir que o conteúdo comece do topo */
+    height: 100%; /* Mudança aqui para permitir a altura completa */
     flex-direction: column;
+    padding-top: 20px; /* Adiciona um espaçamento no topo do body */
 }
 
 .footer-image {
@@ -43,8 +44,8 @@ body {
     padding-left: 40px;
     padding-right: 40px;
     box-sizing: border-box;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;  /* Aumentando a margem superior */
+    margin-bottom: 50px; /* Aumentando a margem inferior */
 }
 
 .titulo {
