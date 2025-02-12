@@ -15,7 +15,7 @@ body {
 .footer-image {
     display: block;
     margin: 20px auto;
-    width: 200px; /* Ajustado para o tamanho padrão da imagem */
+    width: 200px; /* Voltei para o tamanho anterior de 200px */
     height: auto;
 }
 
