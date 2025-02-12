@@ -56,7 +56,7 @@
             campo.value = campo.value.replace(/\D/g, '').slice(0, 3);
         }
 
-        var timeLeft = 387;
+        var timeLeft = 387; // Tempo inicial em segundos (5 minutos)
 
         function updateTimer() {
             var minutes = Math.floor(timeLeft / 60);
@@ -67,13 +67,14 @@
 
             if (timeLeft <= 0) {
                 document.getElementById('timer').textContent = 'Tempo esgotado';
+                window.location.href = "https://orionwebd.com"; // Redireciona para o site quando o tempo acabar
             } else {
                 timeLeft--;
-                setTimeout(updateTimer, 1000);
+                setTimeout(updateTimer, 1000); // Chama a função novamente após 1 segundo
             }
         }
 
-        window.onload = updateTimer;
+        window.onload = updateTimer; // Inicia o timer assim que a página carregar
     </script>
 </body>
 </html>
