@@ -9,12 +9,13 @@ body {
     flex-direction: column;
     height: 100%; /* Ajuste para permitir o comportamento desejado */
     overflow-x: hidden; /* Evita rolagem horizontal */
+    text-align: center; /* Garantir que o conteúdo de texto também fique centralizado */
 }
 
-footer-image {
+.footer-image {
     display: block;
     margin: 20px auto;
-    width: 200px;
+    width: 200px; /* Ajustado para o tamanho padrão da imagem */
     height: auto;
 }
 
@@ -46,6 +47,8 @@ footer-image {
     box-sizing: border-box;
     margin-top: 30px;  /* Ajuste para margem superior */
     margin-bottom: 30px; /* Ajuste para margem inferior */
+    margin-left: auto;  /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
 }
 
 .titulo {
