@@ -1,5 +1,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Cor de fundo */
 }
 
 /* Estilo para a imagem dentro do formulário */
@@ -30,7 +33,7 @@ body {
 /* Estilo para o formulário */
 .formulario {
     background-color: rgb(226, 226, 226);
-    max-width:  500px;
+    max-width: 500px;
     border-radius: 45px;
     width: 70%;
     padding-top: 10px; /* Reduzido ainda mais */
@@ -38,23 +41,21 @@ body {
     padding-left: 40px; /* Mantido */
     padding-right: 40px; /* Mantido */
     position: absolute;
-    /* Coloca o ponto esquerdo em 50% */
     left: 50%;
-
-    /* Coloca o ponto de cima em 50% */
     top: 50%;
-
-    /* Centraliza o ponto esquerdo para virar o meio */
     transform: translate(-50%, -50%);
+    box-sizing: border-box;
 }
 
-.titulo { /* Todos os Titulos */
+/* Títulos */
+.titulo {
     text-align: center;
     color: rgba(0, 0, 0, 0.753);
     font-family: 'Montserrat', sans-serif;
 }
 
-.input { /*Inputs dos formularios */
+/* Inputs dos formulários */
+.input {
     width: 95%;
     height: 45px;
     border: 2px solid #020000;
@@ -62,9 +63,11 @@ body {
     margin: 9px 0;
     font-size: medium;
     border-radius: 10px;
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
 }
 
-.botenviar { /* Botões de enviar formulário */
+/* Botões de envio */
+.botenviar {
     width: 100%;
     height: 45px;
     cursor: pointer;
@@ -74,10 +77,37 @@ body {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     font-size: medium;
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
 }
 
+/* Estilo para o placeholder */
 ::placeholder {
     color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de transparência */
     font-weight: normal; /* Remove o negrito */
     font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .formulario {
+        width: 90%; /* Aumenta a largura em dispositivos menores */
+        padding-left: 20px; /* Ajusta o padding */
+        padding-right: 20px; /* Ajusta o padding */
+    }
+
+    .titulo {
+        font-size: 1.2em; /* Ajusta o tamanho do título */
+    }
+
+    .input {
+        font-size: 1em; /* Ajusta o tamanho da fonte dos inputs */
+    }
+
+    .botenviar {
+        font-size: 1em; /* Ajusta o tamanho da fonte do botão */
+    }
+
+    .timer {
+        font-size: 18px; /* Ajusta o tamanho da fonte do timer */
+    }
 }
